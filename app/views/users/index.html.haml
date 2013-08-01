@@ -14,18 +14,22 @@
               Фамилия
             %td
               Отчество
+            %td
+              Дата рождения 
         %tbody
-          = @users.each do |user|
+          - @users.each do |user|
             %tr
               %td
-                user.login
+                = user.login
               %td
-                user.email
+                = user.email
               %td
-                user.name
+                = user.name
               %td
-                user.surname
+                = user.surname
               %td
-                user.middlename
+                = user.middlename
+              %td
+                = user.date_of_birth
 
 

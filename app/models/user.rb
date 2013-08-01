@@ -8,4 +8,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :login, :email, :password, :password_confirmation
   attr_accessible :name, :surname, :middlename, :date_of_birth
+
+  # после регистрации не нужно создавать сессию и генерировать cookie
+  def active_for_authentication?
+    false 
+  end
 end

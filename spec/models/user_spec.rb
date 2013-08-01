@@ -10,7 +10,6 @@ describe User do
   it { should respond_to(:middlename) }
   it { should respond_to(:date_of_birth) }
 
-
   it "should be valid" do
     user = FactoryGirl.build(:user)
     user.should be_valid
