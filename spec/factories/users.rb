@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :user do
     sequence(:login){ |i| "login_#{i}" }
     sequence(:email){ |i| "mail_#{i}@mail.ru" }
-    encrypted_password "password"
+    password 'password'
     sequence(:name){ |i| "name_#{i}" }
     sequence(:surname){ |i| "surname_#{i}" }
     sequence(:middlename){ |i| "middlename_#{i}" }
