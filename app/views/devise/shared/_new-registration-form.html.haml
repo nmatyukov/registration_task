@@ -6,7 +6,7 @@
   = f.error_notification
   .form-inputs
     .control-group
-      = f.input :login, :required => true, 
+      = f.input :login, :required => true,
         placeholder: 'Логин'
     .control-group
       = f.input :email, :required => true, 
@@ -25,8 +25,8 @@
         placeholder: 'Отчество'
     .control-group
     .control-group
-      = f.input :date_of_birth, :as => :date, :start_year => 1900, :end_year => Date.today.year - 12, 
-        input_html: { class: 'span4' }
+      = f.input :date_of_birth, :as => :date, :start_year => 1900, 
+        :end_year => Date.today.year - 12, input_html: { class: 'span4' }
 
   .form-actions
     %button.btn.btn-primary#signUp{:type => "submit"}

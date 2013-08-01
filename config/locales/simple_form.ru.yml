@@ -1,0 +1,50 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательно'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      # default_message: "Пожалуйста ознакомтесь с проблемой ниже:"
+      default_message: "Неверный адрес e-mail или пароль:"
+
+    # Labels and hints examples
+    labels:
+      defaults:
+        login: 'Логин'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      user:
+        new:
+          username: 'Имя пользователя'
+          email: 'e-mail'
+          country: 'Страна'
+          city: 'Город'
+          address: 'Адрес'
+          avatar: 'Аватар'
+          avatart_button: 'Выберите изображение'
+          name: 'Имя'
+          surname: 'Фамилия'
+          middlename: 'Отчество'
+          date_of_birth: 'Дата рождения'
+          placeholders:
+            username: 'user'
+            email: 'user@mail.ru'
+            password: 'пароль'
+            country: 'Россия'
+            city: 'Москва'
+            address: 'Красная Площадь, д.1'
+          buttons:
+            sign_up: 'Зарегистрироваться'
+
+        edit:
+          email: 'e-mail'
+    hints:
+      defaults:
+        # username: 'Имя пользователя'
+        # password: 'No special characters, please.'
+
