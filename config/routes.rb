@@ -1,11 +1,12 @@
 MysqlRegistration::Application.routes.draw do
 
+  root :to => "users#index"
+
   devise_for :users, :skip => [:registrations] do
     get '/sign_up' => 'devise/registrations#new', :as => :new_user_registration
     post '/users' => 'devise/registrations#create', :as => :user_registration
   end
 
-  root :to => "users#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
