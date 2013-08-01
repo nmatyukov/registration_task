@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :login, :email, :password, :password_confirmation
   attr_accessible :name, :surname, :middlename, :date_of_birth
+  validates :login, presence:   true,
+                    uniqueness: { case_sensitive: false }
 
   # email не обязателен для devise :validatable
   def email_required?
