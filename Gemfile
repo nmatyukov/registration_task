@@ -58,6 +58,7 @@ group :assets do
 
   gem 'bootstrap-sass', '~> 2.3.1.0'
   gem 'font-awesome-rails'
+  gem 'will_paginate'
   gem 'will_paginate-bootstrap'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

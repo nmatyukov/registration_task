@@ -1,2 +1,31 @@
-%h1 Users#index
-%p Find me in app/views/users/index.html.haml
+.container-fluid
+  .row-fluid
+    .span8.offset2
+      %table.table.table-bordered
+        %thead
+          %tr
+            %td
+              Логин
+            %td
+              e-mail
+            %td
+              Имя 
+            %td
+              Фамилия
+            %td
+              Отчество
+        %tbody
+          = @users.each do |user|
+            %tr
+              %td
+                user.login
+              %td
+                user.email
+              %td
+                user.name
+              %td
+                user.surname
+              %td
+                user.middlename
+
+

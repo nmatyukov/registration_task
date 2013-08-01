@@ -330,4 +330,5 @@ DEPENDENCIES
   spork (~> 1.0rc)
   therubyracer
   uglifier (>= 1.0.3)
+  will_paginate
   will_paginate-bootstrap
