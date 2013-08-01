@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :password, :password_confirmation
   attr_accessible :name, :surname, :middlename, :date_of_birth
 
+  # email не обязателен для devise :validatable
+  def email_required?
+    false
+  end
+
   # после регистрации не нужно создавать сессию и генерировать cookie
   def active_for_authentication?
     false 
