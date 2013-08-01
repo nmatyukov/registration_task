@@ -3,18 +3,15 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   # :database_authenticatable, :recoverable, :rememberable, :trackable
-  devise :database_authenticatable, :registerable, :validatable
+  devise :database_authenticatable, :registerable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :login, :email, :password, :password_confirmation
   attr_accessible :name, :surname, :middlename, :date_of_birth
+
   validates :login, presence:   true,
                     uniqueness: { case_sensitive: false }
-
-  # email не обязателен для devise :validatable
-  def email_required?
-    false
-  end
+  validates :email, uniqueness: false 
 
   # после регистрации не нужно создавать сессию и генерировать cookie
   def active_for_authentication?
