@@ -2,7 +2,7 @@ MysqlRegistration::Application.routes.draw do
 
   root :to => "users#index"
 
-  devise_for :users, :skip => [:registrations] do
+  devise_for :users, :skip => [:registrations, :sessions] do
     get '/sign_up' => 'devise/registrations#new', :as => :new_user_registration
     post '/users' => 'devise/registrations#create', :as => :user_registration
   end

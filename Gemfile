@@ -19,9 +19,8 @@ group :development, :test do
   gem 'spork', '~> 1.0rc'
   gem 'guard-rspec'
 
+  gem 'factory_girl_rails'
   gem 'rb-inotify'
-  gem 'jasminerice'
-  gem 'guard-jasmine'
 
   gem 'faker', '1.0.1'
 end
@@ -40,7 +39,6 @@ group :test do
   gem 'cucumber-rails', '1.3.0', :require => false
   gem 'database_cleaner'
   gem 'email_spec'
-  gem 'factory_girl_rails'
   gem 'shoulda'
   gem 'shoulda-matchers'
   gem "mocha", :require => false

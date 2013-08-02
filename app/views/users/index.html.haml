@@ -9,9 +9,9 @@
             %td
               e-mail
             %td
-              Имя 
-            %td
               Фамилия
+            %td
+              Имя 
             %td
               Отчество
             %td
@@ -24,12 +24,13 @@
               %td
                 = user.email
               %td
-                = user.name
-              %td
                 = user.surname
+              %td
+                = user.name
               %td
                 = user.middlename
               %td
                 = user.date_of_birth
 
+      = will_paginate @collection, renderer: BootstrapPagination::Rails
 

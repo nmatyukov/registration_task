@@ -10,8 +10,28 @@ FactoryGirl.define do
     sequence(:middlename){ |i| "middlename_#{i}" }
     date_of_birth '01-01-1987'
 
+    factory :user_uniq_login do
+      sequence(:login){ |i| "login_#{i}" }
+      email 'mail@mail.ru'
+      password '123456789'
+      name 'Nik'
+      surname 'Nik'
+      middlename 'Nik'
+      date_of_birth '01-01-1987'
+    end
+
     factory :sample_user do
-      login 'Nik'
+      login 'Nik_12345'
+      email 'mail@mail.ru'
+      password '123456789'
+      name 'Nik'
+      surname 'Nik'
+      middlename 'Nik'
+      date_of_birth '01-01-1987'
+    end
+
+    factory :sample_user_small_case_login do
+      login 'nik_12345'
       email 'mail@mail.ru'
       password '123456789'
       name 'Nik'
@@ -30,14 +50,5 @@ FactoryGirl.define do
       date_of_birth '01-01-1987'
     end
 
-    factory :sample_user_small_case_login do
-      login 'Nickname'
-      email 'mail@mail.ru'
-      password '123456789'
-      name 'Nik'
-      surname 'Nik'
-      middlename 'Nik'
-      date_of_birth '01-01-1987'
-    end
   end
 end

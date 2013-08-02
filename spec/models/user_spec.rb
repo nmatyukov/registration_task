@@ -15,12 +15,29 @@ describe User do
     user.should be_valid
   end 
 
-  it "same users should not be valid" do
+  it "should validate login between 5..32 characters" do
+    user = FactoryGirl.build(:user)
+    user.login = 'nik'
+    user.save
+    user.should_not be_valid
+
+    user.login = (0...33).map{ ('a'..'z').to_a[rand(26)] }.join
+    user.save
+    user.should_not be_valid
+  end
+
+  it "should validate not empty password" do
+    user = FactoryGirl.build(:user)
+    user.password = ''
+    user.save
+    user.should_not be_valid
+  end
+
+  it "same users creations should raise an error" do
     user_1 = FactoryGirl.create(:sample_user)
     user_1.should be_valid
 
-    user_2 = FactoryGirl.create(:sample_user)
-    user_2.should_not be_valid
+    expect { user_2 = FactoryGirl.create(:sample_user) }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it "same users with different logins should be valid" do
@@ -31,12 +48,11 @@ describe User do
     user_2.should be_valid
   end
 
-  it "same users with case different logins should not be valid" do
+  it "login uniqueness should be case insensitive" do
     user_1 = FactoryGirl.create(:sample_user)
     user_1.should be_valid
 
-    user_2 = FactoryGirl.create(:sample_user_small_case_login)
-    user_2.should_not be_valid
+    expect { user_2 = FactoryGirl.create(:sample_user_small_case_login) }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it "different users should be valid" do
