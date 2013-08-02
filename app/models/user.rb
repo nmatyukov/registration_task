@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates :login, presence:   true,
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true
-  validates_length_of :login, minimum: 5, maximum: 30
+  validates_length_of :login, minimum: 5, maximum: 32
 
   # после регистрации не нужно создавать сессию и генерировать cookie
   def active_for_authentication?
