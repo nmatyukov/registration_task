@@ -19,6 +19,7 @@ group :development, :test do
   gem 'spork', '~> 1.0rc'
   gem 'guard-rspec'
 
+  gem 'factory_girl', :git => 'git://github.com/thoughtbot/factory_girl.git'
   gem 'factory_girl_rails'
   gem 'rb-inotify'
 
